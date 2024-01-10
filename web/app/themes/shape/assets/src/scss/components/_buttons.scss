@@ -1,0 +1,26 @@
+.btn {
+
+	&-primary {
+
+		&:hover,
+		.btn-check:checked + &,
+		&.active,
+		&.show,
+		&:first-child:active,
+		:not(.btn-check) + &:active {
+
+		}
+	}
+
+	&-link {
+
+		&:hover,
+		.btn-check:checked + &,
+		&.active,
+		&.show,
+		&:first-child:active,
+		:not(.btn-check) + &:active {
+
+		}
+	}
+}

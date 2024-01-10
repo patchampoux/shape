@@ -1,0 +1,86 @@
+body,
+input,
+select,
+button,
+textarea {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	min-width: 320px;
+	text-rendering: optimizeLegibility;
+	width: 100%;
+}
+
+#page {
+	min-height: 100vh;
+	overflow: hidden;
+	width: 100%;
+}
+
+a {
+
+}
+
+h1,
+.h1 {
+
+}
+
+.editor {
+
+	h2,
+	.h2 {
+
+	}
+
+	h3,
+	.h3 {
+
+	}
+
+	h4,
+	.h4 {
+
+	}
+
+	h5,
+	.h5 {
+
+	}
+
+	h6,
+	.h6 {
+
+	}
+
+	p,
+	.p,
+	ul,
+	ol,
+	dl {
+
+	}
+
+	p,
+	.p {
+
+		&.lead {
+
+		}
+	}
+
+	> p:last-child,
+	> .p:last-child,
+	> ul:last-child,
+	> ol:last-child,
+	> dl:last-child,
+	> blockquote:last-child {
+		margin-bottom: 0;
+	}
+
+	+ .actions {
+
+	}
+}

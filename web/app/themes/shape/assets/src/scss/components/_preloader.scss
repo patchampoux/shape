@@ -1,0 +1,39 @@
+.preloader {
+	backface-visibility: hidden;
+	background-color: $body-bg;
+	bottom: 0;
+	cursor: wait;
+	left: 0;
+	opacity: 1;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition: opacity .35s ease-in-out, visibility 0s linear .35s;
+	visibility: visible;
+	z-index: 9999;
+}
+
+.dom-is-loaded {
+
+	.preloader {
+		opacity: 0;
+		transition: opacity .35s ease-in-out, visibility 0s linear .35s;
+		visibility: hidden;
+	}
+}
+
+.is-loading {
+
+	.preloader {
+		opacity: 1;
+		transition: opacity .35s ease-in-out;
+		visibility: visible;
+	}
+}
+
+.no-js {
+
+	.preloader {
+		display: none;
+	}
+}

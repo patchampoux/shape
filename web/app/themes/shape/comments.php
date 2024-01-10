@@ -5,7 +5,7 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Shape
  */
@@ -21,57 +21,122 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
-
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h2 class="comments-title mb-4">
 			<?php
-			$shape_comment_count = get_comments_number();
-			if ( '1' === $shape_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'shape' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
+			$comments_number = get_comments_number();
+			if ( '1' === $comments_number ) {
+				/* translators: %s: post title */
+				printf( _x( 'One Comment &ldquo;%s&rdquo;', 'comments title', 'shape' ), get_the_title() );
 			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $shape_comment_count, 'comments title', 'shape' ) ),
-					number_format_i18n( $shape_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+				printf(
+				/* translators: 1: number of comments, 2: post title */
+					_nx(
+						'%1$s Comment on &ldquo;%2$s&rdquo;',
+						'%1$s Comments on &ldquo;%2$s&rdquo;',
+						$comments_number,
+						'comments title',
+						'shape'
+					),
+					number_format_i18n( $comments_number ),
+					get_the_title()
 				);
 			}
 			?>
 		</h2><!-- .comments-title -->
 
-		<?php the_comments_navigation(); ?>
+		<?php
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through?
+			?>
+			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+				<h2 class="visually-hidden"><?php esc_html_e( 'Comment navigation', 'shape' ); ?></h2>
+				<div class="nav-links">
+					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'shape' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'shape' ) ); ?></div>
+				</div><!-- .nav-links -->
+			</nav><!-- #comment-nav-above -->
+			<?php
+		endif; // Check for comment navigation.
+		?>
 
-		<ol class="comment-list">
+		<ul class="comment-list">
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
-					'short_ping' => true,
+					'callback'    => 'shape_comment',
+					'avatar_size' => 128,
 				)
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through?
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'shape' ); ?></p>
+			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+				<h2 class="visually-hidden"><?php esc_html_e( 'Comment navigation', 'shape' ); ?></h2>
+				<div class="nav-links pagination justify-content-center">
+					<div class="nav-previous page-item"><?php previous_comments_link( esc_html__( 'Older Comments', 'shape' ) ); ?></div>
+					<div class="nav-next page-item"><?php next_comments_link( esc_html__( 'Newer Comments', 'shape' ) ); ?></div>
+				</div><!-- .nav-links -->
+			</nav><!-- #comment-nav-below -->
 			<?php
-		endif;
-
+		endif; // Check for comment navigation.
 	endif; // Check for have_comments().
 
-	comment_form();
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		?>
+		<p class="no-comments alert alert-info"><?php esc_html_e( 'Comments are closed.', 'shape' ); ?></p>
+		<?php
+	endif;
 	?>
 
+	<?php
+	comment_form(
+		$args = array(
+			'id_form'           => 'commentform',  // that's the WordPress default value! delete it or edit it ;).
+			'id_submit'         => 'commentsubmit',
+			'title_reply'       => __( 'Leave a Comment', 'shape' ),  // that's the WordPress default value! delete it or edit it ;).
+			'title_reply_to'    => __( 'Leave a Comment to %s', 'shape' ),  // that's the WordPress default value! delete it or edit it ;).
+			'cancel_reply_link' => __( 'Cancel', 'shape' ),  // that's the WordPress default value! delete it or edit it ;).
+			'label_submit'      => __( 'Post Comment', 'shape' ),  // that's the WordPress default value! delete it or edit it ;).
+			'comment_field'     => '<p><textarea placeholder="' . __( 'Start typing...', 'shape' ) . '" id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+
+			/*
+			'comment_notes_after' => '<p class="form-allowed-tags">' .
+					__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', 'shape' ) .
+					'</p><div class="alert alert-info">' . allowed_tags() . '</div>'*/
+
+			// So, that was the needed stuff to have bootstrap basic styles for the form elements and buttons
+
+			// Basically you can edit everything here!
+			// Checkout the docs for more: http://codex.wordpress.org/Function_Reference/comment_form
+			// Another note: some classes are added in the bootstrap-wp.js - ckeck from line 1
+
+
+			// Custom Bootstrap Formfields.
+			'fields'            => apply_filters(
+				'comment_form_default_fields',
+				array(
+					'author' => '<p class="comment-form-author">' . '<input id="author" class="form-control" placeholder="' . __( 'Name*', 'shape' ) . '" name="author" type="text" value="' .
+								esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req = '' . ' />' .
+																										'</p>',
+					'email'  => '<p class="comment-form-email">' . '<input class="form-control "id="email" placeholder="' . __( 'Email* (will not be published)', 'shape' ) . '" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
+								'" size="30"' . $aria_req = '' . ' />' .
+
+															'</p>',
+					'url'    => '<p class="comment-form-url">' .
+								'<input class="form-control" id="url" name="url" placeholder="' . __( 'Website', 'shape' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> ' .
+
+								'</p>',
+				)
+			),
+			// Custom Formfields End.
+		)
+	);
+	?>
 </div><!-- #comments -->

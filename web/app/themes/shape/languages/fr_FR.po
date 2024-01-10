@@ -10,85 +10,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
-"PO-Revision-Date: 2024-01-09 19:11+0000\n"
+"PO-Revision-Date: 2024-01-10 05:01+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
 "Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Loco-Version: 2.6.6; wp-6.4.2"
 
-#. translators: number of items in the mini cart.
-#: inc/woocommerce.php:190
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d item"
-msgstr[1] "%d items"
+#: inc/comments.php:48
+#, php-format
+msgid "%s <span class=\"says d-none\">says:</span>"
+msgstr "%s <span class=\"says d-none\">dit :</span>"
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:63
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:41
 msgid ", "
 msgstr ", "
 
-#. Theme Name of the theme
-msgid "_s"
-msgstr "_s"
+#: inc/comments.php:51
+#, php-format
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s à %2$s"
 
-#: functions.php:132
+#: inc/widgets.php:22 inc/widgets.php:35
 msgid "Add widgets here."
 msgstr "Ajoutez des widgets ici."
 
-#. Author of the theme
-msgid "Automattic"
-msgstr "Automattic"
+#: 404.php:23
+msgid "Back Home &raquo;"
+msgstr "Retour à l'accueil &raquo;"
 
-#: comments.php:68
+#: comments.php:105
+msgid "Cancel"
+msgstr "Annuler"
+
+#: header.php:46 sidebar.php:25
+msgid "Close"
+msgstr "Fermer"
+
+#: comments.php:55 comments.php:80
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: comments.php:93
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
-#. translators: 1: comment count number, 2: title.
-#: comments.php:41
+#. 1: number of comments, 2: post title
+#: comments.php:37
+#, fuzzy, php-format
+#| msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+#| msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "%1$s Comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Comments on &ldquo;%2$s&rdquo;"
 msgstr[0] "%1$s commentaire sur &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s commentaires sur &ldquo;%2$s&rdquo;"
 
-#. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:40
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
+#. %s: post title
+#: comments.php:33
+#, php-format
+msgctxt "comments title"
+msgid "One Comment &ldquo;%s&rdquo;"
+msgstr "Un commentaire &ldquo;%s&rdquo;"
 
-#. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:100 template-parts/content-page.php:39
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr "Modifier <span class=\"screen-reader-text\">%s</span>"
+#. %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:46
+#, php-format
+msgid "Continue reading<span class=\"visually-hidden\"> \"%s\"</span>"
+msgstr "Continuez à lire<span class=\"visually-hidden\"> \"%s\"</span>"
 
-#. Description of the theme
-msgid ""
-"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
-"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
-"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
-"theme out there. That's what I'm here for."
-msgstr ""
-"Salut. Je suis un thème de démarrage appelé <code>_s</code>, ou <em>"
-"underscores</em>, si vous préférez. Je suis un thème destiné au "
-"développement, alors ne m'utilisez pas comme <em>Thème parent</em>. Essayez "
-"plutôt de me transformer en le prochain thème WordPress, le plus "
-"impressionnant du marché. C'est pour cela que je suis ici."
+#: inc/pagination.php:45
+msgid "Current Page"
+msgstr "Page actuelle"
+
+#. %s: Name of current post. Only visible to screen readers
+#: inc/comments.php:33 inc/comments.php:53 inc/template-tags.php:126
+msgid "Edit"
+msgstr "Modifier"
+
+#. %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:30
+#, php-format
+msgid "Edit <span class=\"visually-hidden\">%s</span>"
+msgstr "Modifier <span class=\"visually-hidden\">%s</span>"
+
+#: comments.php:128
+msgid "Email* (will not be published)"
+msgstr "Courriel* (ne sera pas publié)"
+
+#: inc/pagination.php:36
+msgid "First Page"
+msgstr "Première page"
+
+#: inc/theme.php:54
+msgid "Footer menu"
+msgstr "Menu de pied de page"
 
 #. Author URI of the theme
-msgid "https://automattic.com/"
-msgstr "https://automattic.com/"
+msgid "https://patchampoux.com"
+msgstr "https://patchampoux.com"
 
-#. Theme URI of the theme
-msgid "https://underscores.me/"
-msgstr "https://underscores.me/"
-
-#: footer.php:18
-msgid "https://wordpress.org/"
-msgstr "https://wordpress.org/"
-
-#: 404.php:22
+#: 404.php:21
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
@@ -96,7 +120,7 @@ msgstr ""
 "Il semble que rien n'ait été trouvé à cet endroit. Essayez peut-être l'un "
 "des liens ci-dessous ou une recherche?"
 
-#: template-parts/content-none.php:44
+#: template-parts/content-none.php:40
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -104,98 +128,160 @@ msgstr ""
 "Il semble que nous ne trouvions pas ce que vous cherchez. Peut-être qu'une "
 "recherche peut aider."
 
-#. translators: %s: post title
-#: inc/template-tags.php:83
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr ""
-"Laisser un commentaire<span class=\"screen-reader-text\"> sur %s</span>"
+#: inc/pagination.php:54
+msgid "Last Page"
+msgstr "Dernière page"
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:70
-msgctxt "list item separator"
-msgid ", "
-msgstr ", "
+#. %s: post title
+#: comments.php:103 inc/template-tags.php:102
+msgid "Leave a Comment"
+msgstr "Laissez un commentaire"
 
-#: 404.php:31
+#: inc/template-tags.php:152
+msgid "Leave a comment"
+msgstr "Laissez un commentaire"
+
+#: comments.php:104
+#, php-format
+msgid "Leave a Comment to %s"
+msgstr "Laissez un commentaire à %s"
+
+#: inc/theme.php:53
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: header.php:45
+msgid "Menu"
+msgstr "Menu"
+
+#: 404.php:32
 msgid "Most Used Categories"
 msgstr "Catégories les plus utilisées"
 
-#: single.php:24
+#: comments.php:125
+msgid "Name*"
+msgstr "Nom*"
+
+#: comments.php:58 comments.php:83
+msgid "Newer Comments"
+msgstr "Commentaires récents"
+
+#: inc/pagination.php:50
+msgid "Next Page"
+msgstr "Page suivante"
+
+#: single.php:29
 msgid "Next:"
 msgstr "Suivant :"
 
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
+#: template-parts/content-none.php:16
+#, fuzzy
+#| msgid "Nothing Found"
+msgid "Nothing Found for"
 msgstr "Rien n'a été trouvé"
 
-#. translators: 1: title.
-#: comments.php:35
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr "Un commentaire sur &ldquo;%1$s&rdquo;"
+#: comments.php:57 comments.php:82
+msgid "Older Comments"
+msgstr "Commentaires plus anciens"
 
 #: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oups! Cette page est introuvable."
 
-#: template-parts/content-page.php:25 template-parts/content.php:53
-msgid "Pages:"
+#: sidebar.php:20
+msgid "Open side menu"
+msgstr "Ouvrir le menu latéral"
+
+#: inc/pagination.php:45
+#, fuzzy
+#| msgid "Pages:"
+msgid "Page"
 msgstr "Pages :"
 
-#. translators: %s: post author.
-#: inc/template-tags.php:46
+#: inc/pagination.php:32
+msgid "Page navigation"
+msgstr "Navigation des pages"
+
+#: template-parts/content.php:62
+msgid "page navigation"
+msgstr "navigation des pages"
+
+#: inc/password-protected-form.php:17
+msgid "Password"
+msgstr "Mot de passe"
+
+#. Author of the theme
+msgid "Patrick Champoux"
+msgstr "Patrick Champoux"
+
+#: inc/comments.php:33
+msgid "Pingback:"
+msgstr "Ping :"
+
+#: inc/template-tags.php:82
+#, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr "par %s"
 
-#. translators: %s: post date.
-#: inc/template-tags.php:30
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr "Publié sur %s"
+#: comments.php:106
+msgid "Post Comment"
+msgstr "Publier le commentaire"
 
-#. translators: 1: list of categories.
-#: inc/template-tags.php:66
-msgid "Posted in %1$s"
-msgstr "Publié dans %1$s"
+#: inc/pagination.php:40
+msgid "Previous Page"
+msgstr "Page précédente"
 
-#: single.php:23
+#: single.php:28
 msgid "Previous:"
 msgstr "Précédent :"
 
-#: functions.php:53
-msgid "Primary"
-msgstr "Principal"
+#: index.php:83 index.php:153 template-parts/content-search.php:52
+msgid "Read more »"
+msgstr "En savoir plus »"
 
-#: header.php:49
-msgid "Primary Menu"
-msgstr "Menu principal"
-
-#. translators: %s: CMS name, i.e. WordPress.
-#: footer.php:21
-msgid "Proudly powered by %s"
-msgstr "Fièrement propulsé par %s"
-
-#. translators: 1: link to WP admin new post page.
+#. 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
+#, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Prêt à publier votre premier article? <a href=\"%1$s\">Commencez ici</a>."
 
-#. translators: %s: search query.
-#: search.php:22
+#: inc/comments.php:105
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+"Enregistrez mon nom, mon adresse courriel et mon site Web dans ce navigateur "
+"pour la prochaine fois que je commenterai."
+
+#: searchform.php:3 searchform.php:4 template-parts/header/actions.php:22
+msgid "Search"
+msgstr "Rechercher"
+
+#. %s: search query.
+#: search.php:23
+#, php-format
 msgid "Search Results for: %s"
 msgstr "Résultats de recherche pour : %s"
 
-#: functions.php:130
+#. Name of the theme
+msgid "Shape"
+msgstr "Shape"
+
+#. Description of the theme
+msgid "Shape your vision into an awesome website!"
+msgstr "Transforme ta vision en un site Web extraordinaire!"
+
+#: sidebar.php:24 inc/widgets.php:33
 msgid "Sidebar"
 msgstr "Barre latérale"
 
-#: header.php:26
+#: header.php:29
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: template-parts/content-none.php:37
+#: template-parts/content-none.php:35
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -203,21 +289,37 @@ msgstr ""
 "Désolé, mais rien ne correspond aux termes de votre recherche. Veuillez "
 "réessayer avec d'autres mots-clés."
 
-#. translators: 1: list of tags.
-#: inc/template-tags.php:73
-msgid "Tagged %1$s"
-msgstr "Tagué %1$s"
+#: comments.php:107
+msgid "Start typing..."
+msgstr "Commencez à écrire..."
 
-#. translators: 1: Theme name, 2: Theme author.
-#: footer.php:27
-msgid "Theme: %1$s by %2$s."
-msgstr "Thème : %1$s par %2$s."
+#: inc/password-protected-form.php:18
+msgid "Submit"
+msgstr "Soumettre"
 
-#. translators: %1$s: smiley
-#: 404.php:49
+#. 1: list of tags.
+#: inc/template-tags.php:172
+msgid "Tagged"
+msgstr "Tagué"
+
+#: footer.php:43
+msgid "To top"
+msgstr "Haut de page"
+
+#: inc/widgets.php:20
+msgid "Top Nav Search"
+msgstr "Recherche de navigation supérieure"
+
+#. %1$s: smiley
+#: 404.php:50
+#, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Essayez de regarder dans les archives mensuelles. %1$s"
 
-#: inc/woocommerce.php:186
-msgid "View your shopping cart"
-msgstr "Voir votre panier"
+#: comments.php:133
+msgid "Website"
+msgstr "Site Web"
+
+#: inc/comments.php:57
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."

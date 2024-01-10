@@ -11,33 +11,39 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php shape_category_badge(); ?>
+
 		<?php
-		if ( is_singular() ) :
+		if ( is_singular() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
+		} else {
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+		}
+		?>
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				shape_posted_on();
-				shape_posted_by();
-				?>
-			</div><!-- .entry-meta -->
+		<?php if ( 'post' === get_post_type() ) : ?>
+			<p class="entry-meta">
+				<small class="text-body-tertiary">
+					<?php
+					shape_date();
+					shape_author();
+					shape_comment_count();
+					?>
+				</small>
+			</p> <!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
 
-	<?php shape_post_thumbnail(); ?>
+		<?php shape_post_thumbnail(); ?>
+	</header> <!-- .entry-header -->
+	<div class="entry-content editor">
+		<?php the_content(); ?>
 
-	<div class="entry-content">
 		<?php
 		the_content(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'shape' ),
+				/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="visually-hidden"> "%s"</span>', 'shape' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -47,17 +53,27 @@
 				wp_kses_post( get_the_title() )
 			)
 		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'shape' ),
-				'after'  => '</div>',
-			)
-		);
 		?>
-	</div><!-- .entry-content -->
+	</div> <!-- .entry-content -->
+	<footer class="entry-footer clear-both">
+		<div class="mb-4">
+			<?php shape_tags(); ?>
+		</div>
+		<nav aria-label="<?php esc_html_e( 'page navigation', 'shape' ); ?>">
+			<ul class="pagination justify-content-center">
+				<li class="page-item">
+					<?php previous_post_link( '%link' ); ?>
+				</li>
+				<li class="page-item">
+					<?php next_post_link( '%link' ); ?>
+				</li>
+			</ul>
+		</nav>
 
-	<footer class="entry-footer">
-		<?php shape_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+		<?php
+		if ( comments_open() || get_comments_number() ) {
+			comments_template();
+		}
+		?>
+	</footer> <!-- .entry-footer -->
+</article> <!-- #post-<?php the_ID(); ?> -->
