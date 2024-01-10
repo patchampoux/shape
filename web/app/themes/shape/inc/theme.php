@@ -147,7 +147,15 @@ add_filter( 'script_loader_tag', 'shape_add_module_to_my_script', 10, 3 );
  * Print critical styles in head
  */
 function shape_critical_styles(): void {
-	$request  = wp_remote_get( get_template_directory_uri() . '/assets/dist/css/critical.css' );
+	$request  = wp_remote_get(
+		get_template_directory_uri() . '/assets/dist/css/critical.css',
+		array(
+			'method'  => 'GET',
+			'headers' => array(
+				'Authorization' => 'Basic ' . base64_encode( getenv( 'HTPASSWD_USERNAME' ) . ':' . getenv( 'HTPASSWD_PASSWORD' ) ),
+			),
+		)
+	);
 	$response = wp_remote_retrieve_body( $request );
 	?>
 	<style id="critical-css"><?php echo esc_attr( $response ); ?></style>
