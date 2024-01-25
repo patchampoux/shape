@@ -18,16 +18,3 @@ function shape_flush_all_cache_on_save() {
 }
 
 add_action( 'save_post', 'shape_flush_all_cache_on_save', 20 );
-
-/**
- * Sanitize Medias File Name
- */
-function shape_satitize_file_name( $filename ) {
-	$info = pathinfo( $filename );
-	$ext  = empty( $info['extension'] ) ? '' : '.' . $info['extension'];
-	$name = basename( $filename, $ext );
-
-	return strtolower( sanitize_title( $name ) ) . $ext;
-}
-
-add_filter( 'sanitize_file_name', 'shape_satitize_file_name', 10 );

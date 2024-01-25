@@ -4,9 +4,9 @@ Theme JS
 
 jQuery(function ($) {
 	// Close offcanvas on click a, keep .dropdown-menu open (see https://github.com/bootscore/bootscore/discussions/347)
-	$('.offcanvas a:not(.dropdown-toggle, .remove_from_cart_button)').on('click', function () {
-		$('.offcanvas').offcanvas('hide');
-	});
+	// $('.offcanvas a:not(.dropdown-toggle, .remove_from_cart_button)').on('click', function () {
+	// 	$('.offcanvas').offcanvas('hide');
+	// });
 
 	// Searchform focus
 	$('#collapse-search').on('shown.bs.collapse', function () {

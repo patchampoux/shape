@@ -11,16 +11,36 @@ body {
 	min-width: 320px;
 	text-rendering: optimizeLegibility;
 	width: 100%;
+	word-break: initial;
 }
 
-#page {
-	min-height: 100vh;
-	overflow: hidden;
-	width: 100%;
+.site {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.otgs-development-site-front-end {
+	display: none !important;
 }
 
 a {
 
+	&:hover,
+	&:focus {
+
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:focus-visible {
+		box-shadow: $focus-ring-box-shadow;
+	}
+
+	svg {
+		pointer-events: none;
+	}
 }
 
 h1,

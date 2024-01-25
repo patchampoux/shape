@@ -7,6 +7,8 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
+web/app/backups
+web/app/backup-db
 
 # WordPress
 web/wp
@@ -29,6 +31,20 @@ wp-cli.local.yml
 # Exclude auth.json from Git repo
 auth.json
 
+# W3 Total Cache
+wp-content/advanced-cache.php
+wp-content/db.php
+wp-content/object-cache.php
+wp-content/cache/
+wp-content/w3tc-config/
+
+# WPML
+web/app/languages/wpml
+
+# EWWW
+web/app/ewww
+
 # Misc
 .idea
 .DS_Store
+node_modules

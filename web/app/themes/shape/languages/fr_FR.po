@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
-"PO-Revision-Date: 2024-01-10 05:01+0000\n"
+"PO-Revision-Date: 2024-01-25 18:59+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
 "Language: fr_FR\n"
@@ -175,10 +175,9 @@ msgid "Next:"
 msgstr "Suivant :"
 
 #: template-parts/content-none.php:16
-#, fuzzy
 #| msgid "Nothing Found"
 msgid "Nothing Found for"
-msgstr "Rien n'a été trouvé"
+msgstr "Rien n'a été trouvé pour"
 
 #: comments.php:57 comments.php:82
 msgid "Older Comments"
@@ -193,10 +192,9 @@ msgid "Open side menu"
 msgstr "Ouvrir le menu latéral"
 
 #: inc/pagination.php:45
-#, fuzzy
 #| msgid "Pages:"
 msgid "Page"
-msgstr "Pages :"
+msgstr "Page"
 
 #: inc/pagination.php:32
 msgid "Page navigation"

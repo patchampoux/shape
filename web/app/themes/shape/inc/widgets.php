@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Register widgets
  */
-function bootscore_widgets_init() {
+function shape_widgets_init() {
 	// Top Nav Search.
 	register_sidebar(
 		array(
@@ -41,7 +41,7 @@ function bootscore_widgets_init() {
 	);
 }
 
-add_action( 'widgets_init', 'bootscore_widgets_init' );
+add_action( 'widgets_init', 'shape_widgets_init' );
 
 /**
  * Enable shortcodes in HTML-Widget

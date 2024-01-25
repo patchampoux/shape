@@ -68,8 +68,8 @@ defined( 'ABSPATH' ) || exit;
 						<?php get_template_part( 'template-parts/header/actions' ); ?>
 
 						<!-- Navbar Toggler -->
-						<button class="btn btn-outline-secondary d-lg-none ms-1 ms-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar">
-							<i class="fa-solid fa-bars"></i><span class="visually-hidden-focusable">Menu</span>
+						<button class="btn btn-outline-secondary d-lg-none ms-1 ms-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar" aria-label="<?php esc_html_e( 'Menu', 'shape' ); ?>">
+							<i class="fa-solid fa-bars"></i>
 						</button>
 					</div> <!-- .header-actions -->
 				</div> <!-- .container -->

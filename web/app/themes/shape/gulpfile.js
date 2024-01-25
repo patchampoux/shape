@@ -31,7 +31,7 @@ const imgSRCwebp = `${src}img/**/*.{jpg,png}`;
 const imgDEST = `${dist}img/`;
 const fontsSRC = `${src}fonts/**/*`;
 const fontsDEST = `${dist}fonts/`;
-const htmlWatchFiles = `${root}**/*.html`;
+const phpWatchFiles = `${root}**/*.php`;
 const styleWatchFiles = `${root}**/*.scss`;
 
 function compileSCSS() {
@@ -161,7 +161,7 @@ function watch() {
 	gulp.watch(imgSRC, convertWebp);
 	gulp.watch(imgSRC, copy);
 	gulp.watch(fontsSRC, copyFonts);
-	gulp.watch([htmlWatchFiles, `${cssDEST}*.css`, `${jsDEST}*.js`, `${jsModuleDEST}*.js`, `${jsVendorDEST}*.js`, `${imgDEST}*`, `${fontsDEST}*`]).on('change', browserSync.reload);
+	gulp.watch([phpWatchFiles, `${cssDEST}*.css`, `${jsDEST}*.js`, `${jsModuleDEST}*.js`, `${jsVendorDEST}*.js`, `${imgDEST}*`, `${fontsDEST}*`]).on('change', browserSync.reload);
 }
 
 function build() {

@@ -40,13 +40,6 @@ function shape_setup(): void {
 	*/
 	add_theme_support( 'title-tag' );
 
-	/*
-	* Enable support for Post Thumbnails on posts and pages.
-	*
-	* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	*/
-	add_theme_support( 'post-thumbnails' );
-
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -158,7 +151,7 @@ function shape_critical_styles(): void {
 	);
 	$response = wp_remote_retrieve_body( $request );
 	?>
-	<style id="critical-css"><?php echo esc_attr( $response ); ?></style>
+	<style id="critical-css"><?php echo $response; ?></style>
 	<?php
 }
 
